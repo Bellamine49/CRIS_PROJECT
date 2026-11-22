@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %} · Club CRIS</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='club.css') }}">
+  <script src="{{ url_for('static', filename='theme.js') }}" defer></script>
+</head>
+<body>
+  <header><strong class="brand"><i aria-hidden="true"></i> CRIS</strong><span>ENSA Kénitra</span></header>
+  <main>
+    <div class="art" aria-hidden="true"><div class="orbit"></div><b>CRIS<span>.</span></b></div>
+    <section class="glass">{% block content %}{% endblock %}</section>
+  </main>
+  <footer><span>Club CRIS · ENSA Kénitra</span><button type="button" id="theme" hidden>Mode sombre</button></footer>
+</body>
+</html>

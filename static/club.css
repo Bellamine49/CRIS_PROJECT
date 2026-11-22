@@ -1,0 +1,64 @@
+:root {
+  color-scheme: light;
+  --paper: #deeae8; --ink: #102f36; --muted: #3c585e; --pane: #f5fffbac;
+  --field: #fafffddd; --line: #63808066; --flare: #a9dcc9;
+}
+:root.dark {
+  color-scheme: dark;
+  --paper: #101f2a; --ink: #eefaf6; --muted: #b0c8ca; --pane: #19363dde;
+  --field: #142c32dc; --line: #9bc9c055; --flare: #254752;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0 auto; width: min(1160px, 100%); min-height: 100svh; padding: 0 clamp(20px,5vw,72px);
+  display: flex; flex-direction: column; color: var(--ink);
+  font: 1rem/1.5 "Inter","Segoe UI",sans-serif;
+  background: radial-gradient(ellipse at 20% 48%,var(--flare),transparent 58%),var(--paper);
+}
+header, footer, nav, li, .primary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+header, footer { padding: 22px 0; color: var(--muted); font-size: .85rem; }
+header { border-bottom: 1px solid var(--line); }
+footer { border-top: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: .65rem; font-size: 1.3rem; letter-spacing: -.06em; color: var(--ink); }
+.brand i { width: 24px; height: 24px; border: 6px double currentColor; border-radius: 50% 30%; transform: rotate(-25deg); }
+main { flex: 1; display: grid; grid-template-columns: 1fr minmax(320px, 430px); align-items: center; gap: 24px; padding: 58px 0; }
+.art { position: relative; min-height: 340px; display: grid; place-items: center; isolation: isolate; }
+.art b { font-size: clamp(5rem,10vw,9rem); letter-spacing: -.1em; line-height: 1; color: #152e36; text-shadow: 0 1px 1px #fff9; }
+.art b span { color: #ccff93; }
+.orbit {
+  position: absolute; width: min(90%,345px); aspect-ratio: 1; z-index: -1;
+  border-radius: 46% 54% 65% 35% / 67% 39% 61% 33%; transform: rotate(-22deg);
+  background: radial-gradient(at 30% 14%,#fff 0,transparent 24%),radial-gradient(at 80% 77%,#b4a6ff 0,transparent 48%),linear-gradient(140deg,#daffe6,#73b8ad 48%,#d8fbff 70%,#676fba);
+  box-shadow: inset 6px 6px 12px #fff9,inset -10px -8px 22px #4b68908a,0 24px 44px -22px #224a6380;
+}
+.orbit::after { content: ""; position: absolute; inset: 11% -7%; border: 2px solid #f4ffffb3; border-radius: 50%; transform: rotate(-31deg) scaleY(.56); box-shadow: 0 2px 5px #424e724d; }
+.glass { position: relative; padding: clamp(24px,4vw,48px); border: 1px solid #ffffffa8; border-radius: 32px;
+  background: linear-gradient(135deg,#ffffff22,transparent 55%),var(--pane); backdrop-filter: blur(24px) saturate(135%);
+  box-shadow: inset 0 1px 2px #fff9,0 22px 65px -28px #24435766; }
+h1 { font-size: clamp(2rem,4vw,3.3rem); line-height: 1.03; letter-spacing: -.065em; margin: 0 0 1.8rem; }
+.label, dt { font-size: .75rem; font-weight: 650; color: var(--muted); }
+.label { text-transform: uppercase; letter-spacing: .13em; margin: 0 0 .8rem; }
+form, label { display: grid; gap: .45rem; }
+form { gap: 1.2rem; }
+label { font-weight: 600; font-size: .9rem; }
+input, button { font: inherit; }
+input { width: 100%; color: var(--ink); padding: .8rem 1rem; border-radius: 12px; border: 1px solid var(--line); background: var(--field); }
+button, a { cursor: pointer; }
+.primary { width: 100%; background: #163d40; color: white; border: 1px solid #94bcb0; border-radius: 14px; padding: .9rem 1.1rem; font-weight: 650; text-decoration: none; }
+.primary:hover { background: #255758; }
+footer button { background: var(--pane); color: var(--ink); border: 1px solid var(--line); border-radius: 2rem; padding: .55rem 1rem; }
+:focus-visible { outline: 3px solid #418cd5; outline-offset: 3px; }
+dl, ul { padding: 0; margin: 1.2rem 0; }
+dd, li span, .identity { overflow-wrap: anywhere; }
+dd { margin: .25rem 0 1rem; }
+li { padding: .7rem 0; border-top: 1px solid var(--line); }
+small { color: var(--muted); }
+.link { display: inline-block; margin-top: .8rem; color: var(--ink); text-underline-offset: .25em; }
+.alert { border-left: 3px solid #dc753c; padding-left: .8em; }
+@media (max-width: 720px) {
+  main { grid-template-columns: minmax(0,1fr); padding: 24px 0 32px; gap: 10px; }
+  .art { min-height: 150px; }
+  .orbit { width: 145px; }
+  .art b { font-size: 4.5rem; }
+  .glass { width: min(100%,460px); margin-inline: auto; }
+}

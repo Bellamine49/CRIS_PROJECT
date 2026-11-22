@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Connexion{% endblock %}
+{% block content %}
+  <p class="label">Portail du club</p>
+  <h1>Connexion</h1>
+  {% if message %}<p class="alert" role="alert">{{ message }}</p>{% endif %}
+  <form method="post">
+    <label>Adresse e-mail<input name="email" type="email" autocomplete="username" placeholder="nom@exemple.ma" required></label>
+    <label>Mot de passe<input name="password" type="password" autocomplete="current-password" required></label>
+    <button class="primary">Se connecter <span aria-hidden="true">↗</span></button>
+  </form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Mon espace{% endblock %}
+{% block content %}
+  <p class="label">Portail du club</p>
+  <h1>Mon espace</h1>
+  <dl><dt>Adresse e-mail</dt><dd>{{ email }}</dd><dt>Rôle</dt><dd>{{ 'Administrateur' if role == 'admin' else 'Membre' }}</dd></dl>
+  {% if role == 'admin' %}<a class="primary" href="{{ url_for('admin') }}">Administration <span aria-hidden="true">↗</span></a>{% endif %}
+  <a class="link" href="{{ url_for('logout') }}">Se déconnecter</a>
+{% endblock %}
