@@ -17,7 +17,7 @@ Installe Python 3.10 ou plus récent avec le lanceur Windows. Double-clique sur 
 4. Déconnecte-toi et ouvre /espace. Tu dois revenir à la connexion.
 5. Connecte-toi avec le compte administrateur puis ouvre /admin directement.
 
-Hassan a fourni les routes Flask, le script SQLite et les pages espace et admin. Le formulaire login.html manquait dans le dossier reçu. Le formulaire présent ici a été ajouté pour la démonstration. Les routes de gestion des comptes existent déjà mais les commandes correspondantes restent à intégrer à la page admin.
+Leyla Hassane a fourni les routes Flask, le script SQLite et les pages espace et admin. Le formulaire login.html manquait dans le dossier reçu. Le formulaire présent ici a été ajouté pour la démonstration. Les routes de gestion des comptes existent déjà mais les commandes correspondantes restent à intégrer à la page admin.
 
 ## Passer le relais
 
